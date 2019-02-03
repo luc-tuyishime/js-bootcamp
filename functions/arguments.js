@@ -14,10 +14,12 @@ const getScoreText = (name = 'anonymous', score = 0) => {
 let scoreText = getScoreText('luc')
 console.log(scoreText)
 
-// Challenge area
+// Challenge area, tip calculation
 
 let totalTip = (total, tippercent = 0.2) => {
-  return total * tippercent
+  let percent = tippercent * 100
+  let tip = total * tippercent
+  return `A ${percent}% tip on ${total} would be ${tip}`
 }
 
 let totalValue = totalTip(100, undefined)
