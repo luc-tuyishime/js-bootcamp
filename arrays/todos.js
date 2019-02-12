@@ -1,13 +1,51 @@
-const todos = ['drink', 'pray', 'read', 'dance', 'teach']
-// console.log(`You have ${todos.length} todos`)
-// console.log(`Todo: ${todos[0]}`)
-// console.log(`Todo: ${todos[todos.length - 1]}`) // Get the last item
+const todos = [
+  {
+    text: 'Order a cat',
+    complited: true
+  },
+  {
+    text: 'Play football',
+    complited: false
+  },
+  {
+    text: 'Drink some wine',
+    complited: true
+   },
+  {
+    text: 'Go to school everyday',
+    complited: true
+  },
+  {
+    text: 'Buy food',
+    complited: false
+  }
+]
 
-console.log(todos);
-todos.splice(2, 1); // Go to the third item and remove it
-console.log(todos);
+const removeTodo = (todos, todosText) => {  // todos(look for the list) todosTitle(text to delete)
+  return todos.findIndex((todo, index) => {
+      return todo.text.toLowerCase() === todosText.toLowerCase()
+  })
+  if (index > -1) {
+    todos.splice(index, 1) //Go to index and remove 1
+  }
+}
 
-todos.splice(4, 0, 'the new item is added') // Go to the last item and change the property
-console.log(todos)
-todos.shift(0) // Remove the first item
-console.log(todos)
+const result = removeTodo(todos, 'drink some wine')
+console.log(result)
+
+
+
+// Using for Loop
+for(count = 0; count < todos.length; count ++){
+ const num = count + 1
+ const todo = todos[count]
+ console.log(`${num}. ${todo}`)
+}
+
+
+
+
+
+
+
+// A callback is a function added to a function
