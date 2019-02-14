@@ -29,9 +29,19 @@ const removeTodo = (todos, todosText) => {  // todos(look for the list) todosTit
     todos.splice(index, 1) //Go to index and remove 1
   }
 }
-
 const result = removeTodo(todos, 'drink some wine')
 console.log(result)
+
+
+
+// Return list that Not complited
+const getThingsTodo = (todos) => {
+  return todos.filter((todo) => {
+    return !todo.complited
+  })
+}
+console.log(getThingsTodo(todos))
+
 
 
 

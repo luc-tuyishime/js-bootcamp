@@ -13,6 +13,20 @@ const notes = [{},
   }
 ]
 
+const findNotes = (notes, query) => {
+  return notes.filter((note, index) => {
+    const isTitleMatch = note.title.toLowerCase().includes(query.toLowerCase())
+    const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase())
+    return isTitleMatch || isBodyMatch
+  })
+}
+
+console.log(findNotes(notes, 'work'))
+
+
+
+console.log(filteredNotes)
+
 const findNote = (notes, noteTitle) => {
   return notes.find((note, index) => {
     return note.title === noteTitle
@@ -26,8 +40,8 @@ const findNote = (notes, noteTitle) => {
 //   return notes[index]
 // }
 
-const note = findNote(notes, 'Office modification')
-console.log(note)
+// const note = findNote(notes, 'Office modification')
+// console.log(note)
 
 // console.log(notes.length)
 // console.log(notes.indexOf('notes 2'))
