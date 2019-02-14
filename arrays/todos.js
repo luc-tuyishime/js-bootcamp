@@ -20,6 +20,23 @@ const todos = [
     complited: false
   }
 ]
+ // we are Sorting for todos which is not complited
+// Sort specify the order we want to Sort things
+const sortTodos = () => {
+  todos.sort((a, b) => {
+    if (a.complited === false && b.complited === true){ // if a is false mean not complited and be true return -1
+      return -1
+    } else if(b.complited === false && a.complited === true){
+      return 1
+    } else {
+      return 0
+    }
+  })
+}
+sortTodos(todos)
+console.log(todos)
+
+
 
 const removeTodo = (todos, todosText) => {  // todos(look for the list) todosTitle(text to delete)
   return todos.findIndex((todo, index) => {

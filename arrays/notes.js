@@ -13,19 +13,32 @@ const notes = [{},
   }
 ]
 
-const findNotes = (notes, query) => {
-  return notes.filter((note, index) => {
-    const isTitleMatch = note.title.toLowerCase().includes(query.toLowerCase())
-    const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase())
-    return isTitleMatch || isBodyMatch
-  })
+const sortNotes = (notes) => {
+ notes.sort((a, b) => {
+   if (a.title < b.title) {
+     return -1
+   }else if(b.title < a.title) {
+     return 1
+   } else {
+     return 0
+   }
+ })
 }
 
-console.log(findNotes(notes, 'work'))
+sortNotes(notes)
+console.log(notes)
 
+// const findNotes = (notes, query) => {
+//   return notes.filter((note, index) => {
+//     const isTitleMatch = note.title.toLowerCase().includes(query.toLowerCase())
+//     const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase())
+//     return isTitleMatch || isBodyMatch
+//   })
+// }
+//
+// console.log(findNotes(notes, 'work'))
 
-
-console.log(filteredNotes)
+// console.log(filteredNotes)
 
 const findNote = (notes, noteTitle) => {
   return notes.find((note, index) => {
