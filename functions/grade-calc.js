@@ -2,8 +2,8 @@
 // 15/20 => You got a grace C
 // A 90-100, B 80-89, C 78-79, D 60-69, F 0-59
 
-let gradeCal = (score, totalScore) => {
-  let percent = (score / totalScore) * 100
+const gradeCal = (score, totalScore) => {
+  const percent = (score / totalScore) * 100
   let letterGrade = ''
   if (percent >= 90) {
    letterGrade = 'A'
@@ -20,5 +20,5 @@ let gradeCal = (score, totalScore) => {
     return `You got a (${letterGrade}) (${percent})!`
 }
 
-let result = gradeCal(16, 20)
+const result = gradeCal(16, 20)
 console.log(result)

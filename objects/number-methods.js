@@ -12,11 +12,12 @@ let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min
 console.log(randomNumber)
 
 // challenge
-
+// il va generer un nombre random entre 1 et 5 et comparer avec la valeur passer comme argument
 let makeGuess = (guess) => {
   let min = 1
   let max = 5
   let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min
+  console.log(randomNumber)
   return guess === randomNumber
 }
 
