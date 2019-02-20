@@ -38,7 +38,16 @@ document.querySelector('body').appendChild(summary)
 
 
 todos.forEach((todo) => {
-  const p  = document.createElement('p')
+  const p = document.createElement('p')
   p.textContent = todo.text
   document.querySelector('body').appendChild(p)
+})
+
+// Listen for new Creation todo
+document.querySelector('#add-todo').addEventListener('click', (e) => {
+  e.target.textContent = 'A todo was added'
+})
+
+document.querySelector('#add-todo').addEventListener('input', (e) => {
+  console.log(e.target.value)
 })

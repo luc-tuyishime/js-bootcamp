@@ -1,16 +1,32 @@
-// Query and remove
-// const p = document.querySelector('p')
-// p.remove()
+const notes = [
+  {
+    title: 'my next trip',
+    body: 'I would like to go to spain'
+  },
+  {
+    title: 'Movie cinema',
+    body: 'watch black panther'
+  },
+  {
+    title: 'Champions league',
+    body: 'Juventus is playing tomorrow'
+  }
+]
 
-// Query all and remove
-const ps = document.querySelectorAll('p')  // Get all the P
-ps.forEach((p) => { // iterate through each
-  // p.textContent = '*******'
-  // p.remove() // remove on by one
-  console.log(p.textContent)
+document.querySelector('button').addEventListener('click', (e) => {
+  e.target.textContent = 'The button was clicked'
 })
 
-// Add a new element
-const newParagraph = document.createElement('p')
-newParagraph.textContent = 'This is the new element from Javascript'
-document.querySelector('body').append(newParagraph) 
+document.querySelector('#create-note').addEventListener('click', (e) => {
+  e.target.textContent = 'the button was clicked'
+})
+
+document.querySelector('#remove-all').addEventListener('click', () => {
+  document.querySelectorAll('.note').forEach((note) => {
+    note.remove()
+  })
+})
+
+document.querySelector('#search-text').addEventListener('input', (e) => {
+  console.log(e.target.value)
+})
